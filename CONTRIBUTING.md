@@ -124,11 +124,21 @@ references/
 
 ## Reporting issues
 
-Open an issue with:
+Use the GitHub issue templates in `.github/ISSUE_TEMPLATE/`:
+
+- `bug_report.md` for broken skill behavior, script issues, template defects, or documentation problems
+- `new_skill_request.md` for proposing a new QA skill when the need is not already covered by an existing skill
+
+For a bug report, include:
 - **Skill name** affected
-- **Trigger phrase** you used
+- **Trigger phrase** or input used
 - **Expected output** vs **actual output**
-- **AI agent** you used (Claude / Codex / Cursor)
+- **AI agent** used (Claude / Codex / Cursor)
+
+For a new skill request, explain:
+- The QA task to cover
+- Why an existing skill is not enough
+- Expected inputs, outputs, and trigger phrases
 
 ---
 

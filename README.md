@@ -118,6 +118,10 @@ QIOS/
 ├── CHANGELOG.md
 ├── LICENSE
 ├── .gitignore
+├── .github/
+│   └── ISSUE_TEMPLATE/
+│       ├── bug_report.md           ← Bug report template
+│       └── new_skill_request.md    ← New skill proposal template
 │
 ├── skills/
 │   ├── _shared/                     ← Shared references across all skills
@@ -261,6 +265,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
 - Adding a new skill
 - Improving existing skills
 - Reporting issues
+- Using issue templates
 - Sharing your QIOS setup
 
 Contributions should preserve the same bar: clear triggers, structured outputs, and execution-ready QA content.
