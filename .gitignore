@@ -1,0 +1,59 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+cypress.env.json
+cypress.env.*.json
+
+# Dependencies
+node_modules/
+
+# Cypress and QA runtime artifacts
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+coverage/
+.nyc_output/
+allure-results/
+allure-report/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Temporary files
+tmp/
+.tmp/
+*.tmp
+
+# OS and filesystem artifacts
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd
+.apdisk
+__MACOSX/
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Backup and merge artifacts
+*.bak
+*.orig
+*.rej
+
+# Editor and IDE artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

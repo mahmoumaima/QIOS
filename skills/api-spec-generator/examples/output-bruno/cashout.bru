@@ -1,0 +1,47 @@
+meta {
+  name: POST /wallet/cashout — Happy Path
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/wallet/cashout
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "amount": 100,
+    "currency": "USD",
+    "recipient_id": "usr_123"
+  }
+}
+
+vars:pre-request {
+  base_url: https://api.dev.com
+}
+
+tests {
+  test("Status 200", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+
+  test("Response time < 2000ms", function() {
+    expect(res.getResponseTime()).to.be.below(2000);
+  });
+
+  test("Has transaction_id", function() {
+    const body = res.getBody();
+    expect(body).to.have.property("transaction_id");
+  });
+
+  test("Has status field", function() {
+    const body = res.getBody();
+    expect(body).to.have.property("status");
+  });
+}

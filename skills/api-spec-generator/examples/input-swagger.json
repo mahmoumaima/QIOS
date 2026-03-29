@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Wallet API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/wallet/cashout": {
+      "post": {
+        "summary": "Withdraw funds from wallet",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["amount", "currency", "recipient_id"],
+                "properties": {
+                  "amount":       { "type": "number",  "minimum": 1, "maximum": 10000 },
+                  "currency":     { "type": "string",  "example": "USD" },
+                  "recipient_id": { "type": "string",  "example": "usr_123" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Cashout successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "transaction_id": { "type": "string" },
+                    "status":         { "type": "string", "example": "pending" }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "description": "Validation error" },
+          "401": { "description": "Unauthorized" },
+          "422": { "description": "Business rule violation" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

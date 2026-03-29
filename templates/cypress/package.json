@@ -1,0 +1,15 @@
+{
+  "name": "cypress-tests",
+  "version": "1.0.0",
+  "description": "E2E test suite — scaffolded by QIOS",
+  "scripts": {
+    "cy:open":       "cypress open",
+    "cy:run":        "cypress run",
+    "cy:smoke":      "cypress run --spec 'cypress/e2e/**/*.cy.js' --env tags=smoke",
+    "cy:regression": "cypress run --spec 'cypress/e2e/**/*.cy.js' --env tags=regression",
+    "cy:security":   "cypress run --spec 'cypress/e2e/**/*.cy.js' --env tags=security"
+  },
+  "devDependencies": {
+    "cypress": "^13.0.0"
+  }
+}
