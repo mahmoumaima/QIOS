@@ -74,13 +74,60 @@ This release establishes the foundation of QIOS as a QA skills system for AI-ass
 ## Roadmap
 
 ### Planned for v1.1.0
-- `performance-test-designer` skill — k6 / Gatling test scaffolding
-- `bug-report-writer` skill — structured bug report from a description
-- `test-data-generator` skill — realistic test data sets
+- `performance-test-designer` skill — basic performance test scaffolding with a k6 focus
+- `bug-report-writer` skill — structured bug report generation
+- `test-data-generator` skill — reusable QA test data sets
+- initial CI validation for examples — Gherkin syntax, JSON validity, and structure checks
+
+---
 
 ### Planned for v1.2.0
-- Bruno collection examples extended
 - `_shared/` reference for mobile testing conventions
+- `_shared/` reference for accessibility QA heuristics
+- `test-reviewer` skill — structured review of QA artifacts such as test cases and Gherkin files
+- Bruno collection examples extended
+
+---
+
+### Planned for v1.3.0
+- `traceability-mapper` skill — link requirements to test cases
+- `api-regression-pack-builder` skill — reusable API regression scenarios
+- `_shared/` reference for exploratory testing heuristics
+- additional real-world examples across skills
+
+---
+
+### Planned for v2.0.0
+- improved CI validation for QIOS artifacts
+- validation of examples such as Gherkin, JSON, and scripts
+- consistency checks across skills, templates, and references
+- repository validation scripts for local checks
+- release checklist for quality control
+
+---
+
+### Planned for v2.1.0
+- stronger validation rules for QA artifacts
+- Gherkin structure checks
+- JSON and API consistency checks
+- contributor guidance for skill completeness
+- improved documentation for skill usage and extension
+
+---
+
+### Planned for v3.0.0
+- multi-skill usage patterns — documented, not automated
+- end-to-end QA workflows from requirement to test cases and examples
+- consistency guidelines across QA artifacts such as test cases, Gherkin, and API collections
+
+---
+
+## Roadmap Philosophy
+
+QIOS evolves in three stages:
+- `1.x` — structured QA capabilities
+- `2.x` — validated and reliable QA framework
+- `3.x` — structured QA workflows across artifacts
 
 ---
 
