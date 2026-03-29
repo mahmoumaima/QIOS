@@ -72,7 +72,7 @@ Feature: User Authentication — Login
   @boundary @regression
   Scenario Outline: Password length boundary validation
     When the user submits a password of <length> characters
-    Then the result is <r>
+    Then the result is <result>
 
     Examples:
       | length | result   |
