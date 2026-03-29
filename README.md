@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/assets/qios-banner.jpg" alt="QIOS banner" width="960" />
+
 # QIOS
 ### Quality Intelligence Operating System
 

@@ -6,9 +6,21 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`
 
 ---
 
-## [1.0.0] — 2026-03-30
+## [1.0.0] — 2026-03-29
 
 ### Added — Initial release
+
+Initial release of QIOS (Quality Intelligence Operating System).
+
+QIOS is a structured QA skill framework designed to guide AI agents toward consistent, risk-aware, and execution-ready testing outputs.
+
+This release establishes the foundation of QIOS as a QA skills system for AI-assisted testing.
+
+**Core principles**
+- structured QA reasoning
+- reusable testing logic
+- consistent output format
+- versioned QA knowledge
 
 **Framework**
 - `AGENTS.md` — global AI working agreement
@@ -18,10 +30,10 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`
 - `docs/examples.md` — real-world usage walkthrough
 
 **Skills**
-- `api-deep-analyzer` — full test coverage from an API endpoint
-- `api-spec-generator` — importable Postman & Bruno collections
-- `qa-test-designer` — test plans from User Stories or Jira tickets
-- `gherkin-spec-writer` — BDD `.feature` files from requirements
+- `api-deep-analyzer` — complete API test coverage from an endpoint or specification
+- `api-spec-generator` — Postman / Bruno collection generation
+- `qa-test-designer` — structured test cases from User Stories or Jira tickets
+- `gherkin-spec-writer` — BDD feature generation from requirements
 - `cypress-test-bootstrap` — Cypress project scaffolding
 
 **Shared references**
