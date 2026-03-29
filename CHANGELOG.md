@@ -6,6 +6,22 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`
 
 ---
 
+## [1.0.1] — 2026-03-29
+
+### Fixed — Example consistency and execution safety
+
+Patch release for example quality fixes after the initial launch.
+
+**Examples**
+- fixed the invalid `<r>` placeholder in `skills/gherkin-spec-writer/examples/output-login.feature`
+- removed ambiguous expected results from API and QA example test cases
+- aligned duplicate-request expectations to a single expected result: `409 Conflict`
+- aligned recipient-not-found examples to a single expected result: `404`
+
+This release improves execution safety and keeps example outputs unambiguous and testable.
+
+---
+
 ## [1.0.0] — 2026-03-29
 
 ### Added — Initial release
