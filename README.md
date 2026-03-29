@@ -13,7 +13,7 @@
 ---
 
 <p>
-  <strong>Created and maintained by <a href="https://linkedin.com/in/mahmoumaima">Oumaima Mahmoudi</a></strong><br/>
+  <strong>Created and maintained by <a href="https://www.linkedin.com/in/884055190/">Oumaima Mahmoudi</a></strong><br/>
   QA Engineer · Business Analyst · Fintech<br/>
   <em>"Quality is not a phase. It's a mindset."</em>
 </p>
@@ -272,7 +272,7 @@ QA Engineer · Business Analyst · Fintech
 
 *Focused on building structured, execution-ready QA systems.*
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-mahmoumaima-0077B5?logo=linkedin)](https://linkedin.com/in/mahmoumaima)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5?logo=linkedin)](https://www.linkedin.com/in/884055190/)
 [![GitHub](https://img.shields.io/badge/GitHub-mahmoumaima-181717?logo=github)](https://github.com/mahmoumaima/QIOS)
 
 ---
