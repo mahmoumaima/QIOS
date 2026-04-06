@@ -45,7 +45,8 @@ Generate a complete, structured test plan from a User Story, Jira ticket, or fea
 
 - `gherkin-spec-writer` — convert this test plan to a `.feature` file
 - `api-deep-analyzer` — if the feature involves an API endpoint
-- `cypress-test-bootstrap` — if automation is needed
+- `cypress-test-bootstrap` — if automation is needed in Cypress
+- `playwright-test-bootstrap` — if automation is needed in Playwright
 
 ---
 

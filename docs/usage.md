@@ -44,7 +44,8 @@ cp QIOS/AGENTS.md ~/.codex/AGENTS.md
     ├── api-spec-generator/
     ├── qa-test-designer/
     ├── gherkin-spec-writer/
-    └── cypress-test-bootstrap/
+    ├── cypress-test-bootstrap/
+    └── playwright-test-bootstrap/
 ```
 
 ---
@@ -87,6 +88,7 @@ flowchart LR
     B -->|test cases for US| E[qa-test-designer]
     B -->|write Gherkin| F[gherkin-spec-writer]
     B -->|scaffold Cypress| G[cypress-test-bootstrap]
+    B -->|scaffold Playwright| H[playwright-test-bootstrap]
 ```
 
 **Examples:**
@@ -106,6 +108,9 @@ flowchart LR
 
 "Scaffold a Cypress project for the checkout module"
 → cypress-test-bootstrap
+
+"Scaffold a Playwright project for the checkout module"
+→ playwright-test-bootstrap
 ```
 
 ---

@@ -12,13 +12,14 @@
 - [Example 3 — qa-test-designer](#example-3--qa-test-designer)
 - [Example 4 — gherkin-spec-writer](#example-4--gherkin-spec-writer)
 - [Example 5 — cypress-test-bootstrap](#example-5--cypress-test-bootstrap)
+- [Example 6 — playwright-test-bootstrap](#example-6--playwright-test-bootstrap)
 - [End-to-end walkthrough](#end-to-end-walkthrough)
 
 ---
 
 ## Full workflow overview
 
-All 5 examples below are based on the same feature: **Money Transfer**.
+All 6 examples below are based on the same feature: **Money Transfer**.
 
 ```mermaid
 flowchart TD
@@ -36,10 +37,12 @@ flowchart TD
     QTD & ADA --> GSW["gherkin-spec-writer\n→ transfer.feature\n→ 10 scenarios\n→ tagged + structured"]
 
     QTD & GSW & ADA --> CTB["cypress-test-bootstrap\n→ transfer.cy.js\n→ 8 E2E tests\n→ API login + assertions"]
+    QTD & GSW & ADA --> PTB["playwright-test-bootstrap\n→ transfer.spec.ts\n→ 4 E2E tests\n→ auth setup + assertions"]
 
     style US fill:#F0F4FF
     style EP fill:#F0F4FF
     style CTB fill:#2D6BE4,color:#fff
+    style PTB fill:#0E6FFF,color:#fff
 ```
 
 ---
@@ -206,9 +209,46 @@ graph TD
 
 ---
 
+## Example 6 — playwright-test-bootstrap
+
+**Input:** Money transfer feature to automate in Playwright
+
+**Prompt:**
+```
+Generate a Playwright spec for the money transfer feature.
+Cover: happy path, insufficient balance, unknown recipient, and boundary amounts.
+```
+
+**What QIOS produces:**
+
+```mermaid
+graph TD
+    SPEC["transfer.spec.ts"]
+    SETUP["auth.setup.ts\nAPI login + storage state"]
+    HP["Happy Path\nvalid transfer"]
+    NEG["Negative Cases\ninsufficient balance\nunknown recipient"]
+    BOUND["Boundary Cases\nminimum amount\nabove max"]
+
+    SETUP --> SPEC --> HP & NEG & BOUND
+
+    style SPEC fill:#0E6FFF,color:#fff
+    style SETUP fill:#E8F0FE
+```
+
+| Output | Details |
+|---|---|
+| **Playwright spec** | `.spec.ts` with happy path, negative, and boundary tests |
+| **Auth setup** | API login in `auth.setup.ts` with storage state reuse |
+| **Assertions** | `await expect(...)` only — zero `waitForTimeout()` |
+| **Selectors** | `getByTestId()` or equally stable locators |
+
+📄 **Full output:** [examples/playwright/transfer.spec.ts](../examples/playwright/transfer.spec.ts)
+
+---
+
 ## End-to-end walkthrough
 
-The complete QA workflow for a single feature using all 5 QIOS skills:
+The complete QA workflow for a single feature using all 6 QIOS skills:
 
 ```mermaid
 sequenceDiagram
@@ -230,6 +270,9 @@ sequenceDiagram
 
     QA->>AI: "Scaffold Cypress tests for transfer"
     AI->>OUT: transfer.cy.js (8 E2E specs)
+
+    QA->>AI: "Scaffold Playwright tests for transfer"
+    AI->>OUT: transfer.spec.ts (Playwright E2E spec)
 
     Note over QA,OUT: Full QA coverage in < 15 minutes
 ```

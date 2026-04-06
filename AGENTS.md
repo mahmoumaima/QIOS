@@ -48,7 +48,8 @@ When a request matches multiple skills, apply in this order:
 2. `api-deep-analyzer`       — test coverage from an endpoint
 3. `qa-test-designer`        — test plan from a User Story
 4. `gherkin-spec-writer`     — Gherkin / BDD specification
-5. `cypress-test-bootstrap`  — E2E automation scaffolding
+5. `cypress-test-bootstrap`  — Cypress E2E automation scaffolding
+6. `playwright-test-bootstrap` — Playwright E2E automation scaffolding
 
 ---
 

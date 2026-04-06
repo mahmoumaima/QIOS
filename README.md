@@ -9,7 +9,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![AI: Agent Agnostic](https://img.shields.io/badge/AI-Agent%20Agnostic-green.svg)](#compatibility)
-[![Skills](https://img.shields.io/badge/Skills-5-blue.svg)](skills/)
+[![Skills](https://img.shields.io/badge/Skills-6-blue.svg)](skills/)
 [![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)](CHANGELOG.md)
 
 ---
@@ -88,8 +88,9 @@ flowchart TD
     C --> F[qa-test-designer]
     C --> G[gherkin-spec-writer]
     C --> H[cypress-test-bootstrap]
-    D & E & F & G & H --> I[Load full SKILL.md\n+ references]
-    I --> J[Structured QA Output\ntest cases · collections · .feature · specs]
+    C --> I[playwright-test-bootstrap]
+    D & E & F & G & H & I --> J[Load full SKILL.md\n+ references]
+    J --> K[Structured QA Output\ntest cases · collections · .feature · specs]
 ```
 
 ---
@@ -105,6 +106,7 @@ Each skill covers a distinct QA task and is selected from request intent.
 | [`qa-test-designer`](skills/qa-test-designer/) | Build a structured test plan from a User Story or Jira ticket | *"test cases for this US", "test plan"* |
 | [`gherkin-spec-writer`](skills/gherkin-spec-writer/) | Convert requirements into BDD `.feature` files | *"write Gherkin", "generate .feature file"* |
 | [`cypress-test-bootstrap`](skills/cypress-test-bootstrap/) | Scaffold Cypress automation projects and reusable E2E specs | *"init Cypress", "scaffold E2E tests"* |
+| [`playwright-test-bootstrap`](skills/playwright-test-bootstrap/) | Scaffold Playwright automation projects and reusable E2E specs | *"init Playwright", "scaffold Playwright tests"* |
 
 ---
 
@@ -140,7 +142,8 @@ QIOS/
 │   ├── api-spec-generator/          ← Generate Postman/Bruno collections
 │   ├── qa-test-designer/            ← Test plans from User Stories
 │   ├── gherkin-spec-writer/         ← BDD .feature files
-│   └── cypress-test-bootstrap/      ← Cypress project scaffolding
+│   ├── cypress-test-bootstrap/      ← Cypress project scaffolding
+│   └── playwright-test-bootstrap/   ← Playwright project scaffolding
 │
 ├── docs/
 │   ├── architecture.md              ← How QIOS works (with diagrams)
@@ -155,7 +158,8 @@ QIOS/
 └── examples/
     ├── api/                         ← API test cases and collections
     ├── gherkin/                     ← `.feature` file examples
-    └── cypress/                     ← `.cy.js` spec examples
+    ├── cypress/                     ← `.cy.js` spec examples
+    └── playwright/                  ← `.spec.ts` examples
 ```
 
 ---
@@ -206,6 +210,9 @@ Describe the QA task in natural language. QIOS maps the request to the appropria
 
 "Scaffold a Cypress project for the wallet module"
 # → triggers cypress-test-bootstrap
+
+"Scaffold a Playwright project for the wallet module"
+# → triggers playwright-test-bootstrap
 ```
 
 ---
@@ -239,7 +246,7 @@ The repository is documented at both framework level and skill level, so the ope
 |---|---|
 | [Architecture](docs/architecture.md) | How QIOS works internally: loading model, skill selection, and structure |
 | [Usage Guide](docs/usage.md) | Installation, triggering skills, and adding new skills |
-| [Examples](docs/examples.md) | Real-world walkthrough of all 5 skills |
+| [Examples](docs/examples.md) | Real-world walkthrough of all 6 skills |
 | [AGENTS.md](AGENTS.md) | Global AI working agreement to load into your agent |
 | [Contributing](CONTRIBUTING.md) | How to add skills, report issues, and contribute |
 | [Changelog](CHANGELOG.md) | Release history |
@@ -256,6 +263,7 @@ Representative QIOS outputs are included directly in the repository:
 | Postman collection — wallet API | [examples/api/cashout-collection.json](examples/api/cashout-collection.json) |
 | Gherkin `.feature` — money transfer | [examples/gherkin/transfer.feature](examples/gherkin/transfer.feature) |
 | Cypress spec — money transfer | [examples/cypress/transfer.cy.js](examples/cypress/transfer.cy.js) |
+| Playwright spec — money transfer | [examples/playwright/transfer.spec.ts](examples/playwright/transfer.spec.ts) |
 
 ---
 

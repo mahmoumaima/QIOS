@@ -47,6 +47,7 @@ Generate structured, BDD-compliant Gherkin `.feature` files from any requirement
 
 - `qa-test-designer` — design test cases first, then convert to Gherkin
 - `cypress-test-bootstrap` — automate these Gherkin scenarios in Cypress
+- `playwright-test-bootstrap` — automate these Gherkin scenarios in Playwright
 
 ---
 

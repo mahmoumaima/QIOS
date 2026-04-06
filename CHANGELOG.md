@@ -6,6 +6,18 @@ Format: [Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`
 
 ---
 
+## [Unreleased]
+
+### Added — Playwright automation scaffolding
+
+- `playwright-test-bootstrap` — Playwright E2E project scaffolding and reusable spec generation
+- Playwright skill assets — examples, references, and bootstrap script
+- top-level Playwright example: `examples/playwright/transfer.spec.ts`
+- framework documentation updated to include the sixth skill across README, usage, architecture, and examples
+- related skill docs and global priority updated to reference Playwright automation
+
+---
+
 ## [1.0.1] — 2026-03-29
 
 ### Fixed — Example consistency and execution safety

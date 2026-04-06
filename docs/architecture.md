@@ -62,7 +62,8 @@ It selects the right skill, then reads only what it needs for the task.
 
 ```mermaid
 flowchart TD
-    A([User request]) --> B[AI reads all skill metadata\nname + description]
+    A([User request]) --> B[AI reads all skill metadata
+name + description]
     B --> C{Which skill matches?}
 
     C -->|analyze this API| D[api-deep-analyzer]
@@ -70,15 +71,18 @@ flowchart TD
     C -->|test cases for this US| F[qa-test-designer]
     C -->|write Gherkin scenarios| G[gherkin-spec-writer]
     C -->|scaffold Cypress project| H[cypress-test-bootstrap]
-    C -->|no match| I[Answer directly\nno skill loaded]
+    C -->|scaffold Playwright project| I[playwright-test-bootstrap]
+    C -->|no match| J[Answer directly
+no skill loaded]
 
-    D & E & F & G & H --> J[Load full SKILL.md]
-    J --> K[Load referenced files\nif needed]
-    K --> L([Structured QA output])
+    D & E & F & G & H & I --> K[Load full SKILL.md]
+    K --> L[Load referenced files
+if needed]
+    L --> M([Structured QA output])
 
     style A fill:#2D6BE4,color:#fff
-    style L fill:#2D6BE4,color:#fff
-    style I fill:#F8F9FB,color:#1A1A2E
+    style M fill:#2D6BE4,color:#fff
+    style J fill:#F8F9FB,color:#1A1A2E
 ```
 
 ---
@@ -99,6 +103,7 @@ graph TD
     SKILLS --> S3["qa-test-designer/"]
     SKILLS --> S4["gherkin-spec-writer/"]
     SKILLS --> S5["cypress-test-bootstrap/"]
+    SKILLS --> S6["playwright-test-bootstrap/"]
 
     S1 --> SM["SKILL.md ✅ required"]
     S1 --> SRM["README.md"]
@@ -128,7 +133,7 @@ graph LR
         direction TB
         A["SKILL.md\n─────────\nfrontmatter: name, description\nbody: process, output format,\nreferences list\n✅ Required"]
         B["README.md\n─────────\nHuman documentation\nWhen to use · How to trigger\nWhat you get · Related skills"]
-        C["examples/\n─────────\ninput-*.md — example input\noutput-*.md — example output\n*.json / *.feature / *.cy.js"]
+        C["examples/\n─────────\ninput-*.md — example input\noutput-*.md — example output\n*.json / *.feature / *.cy.js / *.spec.ts"]
         D["references/\n─────────\nChecklist, standards,\nconventions, style guides\nLoaded only when needed"]
         E["scripts/\n─────────\nBash scripts\nScaffold, validate,\ngenerate files"]
     end
@@ -181,15 +186,38 @@ QIOS skills map directly to a complete QA workflow:
 
 ```mermaid
 flowchart LR
-    US["User Story\nor Jira Ticket"] --> QTD["qa-test-designer\n─────────────\nTest plan\n+ risk tagging\n+ flags"]
+    US["User Story
+or Jira Ticket"] --> QTD["qa-test-designer
+─────────────
+Test plan
++ risk tagging
++ flags"]
 
-    QTD --> GSW["gherkin-spec-writer\n─────────────\n.feature file\nBDD scenarios\ntagged + structured"]
+    QTD --> GSW["gherkin-spec-writer
+─────────────
+.feature file
+BDD scenarios
+tagged + structured"]
 
-    EP["API Endpoint\nor Swagger"] --> ADA["api-deep-analyzer\n─────────────\nFull test cases\nhappy/neg/edge/security"]
+    EP["API Endpoint
+or Swagger"] --> ADA["api-deep-analyzer
+─────────────
+Full test cases
+happy/neg/edge/security"]
 
-    EP --> ASG["api-spec-generator\n─────────────\nPostman collection\nor Bruno .bru files"]
+    EP --> ASG["api-spec-generator
+─────────────
+Postman collection
+or Bruno .bru files"]
 
-    QTD & GSW & ADA --> CTB["cypress-test-bootstrap\n─────────────\nE2E spec files\nproject scaffold"]
+    QTD & GSW & ADA --> CTB["cypress-test-bootstrap
+─────────────
+E2E spec files
+project scaffold"]
+    QTD & GSW & ADA --> PTB["playwright-test-bootstrap
+─────────────
+E2E spec files
+project scaffold"]
 
     style US fill:#F0F4FF
     style EP fill:#F0F4FF
@@ -198,10 +226,11 @@ flowchart LR
     style ADA fill:#E8F0FE
     style ASG fill:#E8F0FE
     style CTB fill:#2D6BE4,color:#fff
+    style PTB fill:#0E6FFF,color:#fff
 ```
 
 Each skill output feeds naturally into the next.
-A single feature can flow through all 5 skills in sequence.
+A single feature can flow through all 6 skills in sequence.
 
 ---
 
